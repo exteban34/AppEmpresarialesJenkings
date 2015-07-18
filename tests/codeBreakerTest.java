@@ -43,7 +43,7 @@ public class codeBreakerTest {
 		assertEquals("XX_", resultado);
 	}
 	@Test
-	public void combinado2() {
+	public void combinado3() {
 		resultado = breaker.comparar("9587", "5687");
 		assertEquals("XX_", "hola");
 	}
