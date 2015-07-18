@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+[ compileJava, compileTestJava ]*.options*.encoding = 'ISO-8859-1'
+
+sourceCompability = 1.7
+targetCompability = 1.7
+
+sourceSets{
+	main {
+		java{
+			srcDir 'src'
+		}	
+	}
+	test{
+		java{
+			srcDir 'tests'
+		}
+	}
+
+}
+
+repositories{
+	mavenCentral()
+}
+
+dependencies{
+	compile 'junit:junit:4.11'
+
+}
+
+test{
+	jacoco {
+		toolVersion = '0.7.1.201405082137'
+		destinationFile = file("build/jacoco/jacoco.exec")
+	}
+}
+
+
+
